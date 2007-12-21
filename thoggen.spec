@@ -12,6 +12,7 @@ Source:		http://prdownloads.sourceforge.net/thoggen/%{name}-%{version}.tar.bz2
 URL:		http://thoggen.net/
 License:	GPL
 Group:		Video
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	iso-codes
 BuildRequires:	libgstreamer-plugins-base-devel
 BuildRequires:	libdvdread-devel
