@@ -31,6 +31,7 @@ Requires:	gstreamer0.10-plugins-good
 Requires:  	gstreamer0.10-plugins-ugly gstreamer0.10-vorbis
 Requires:	iso-codes
 BuildRequires: ImageMagick
+ExcludeArch: x86_64
 
 %description
 Thoggen is designed to be easy and straight-forward to use. It attempts to
