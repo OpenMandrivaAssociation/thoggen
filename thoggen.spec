@@ -60,10 +60,6 @@ rm -fr %buildroot/%_docdir/*
 ln -sf %_docdir/%name-%version %buildroot/%_docdir/%name
 
 #menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="%{name}" icon="%{name}.png" needs="x11" title="Thoggen" longtitle="DVD backup utility" section="Multimedia/Video" xdg="true"
-EOF
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="X-MandrivaLinux-Multimedia-Video" \
@@ -105,7 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/%name.desktop
 %{_datadir}/pixmaps/%name.png
 %{_datadir}/%name
-%{_menudir}/%name
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
