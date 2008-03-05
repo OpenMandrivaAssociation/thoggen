@@ -1,37 +1,37 @@
-%define name	thoggen
-%define version	0.6.0
-%define release %mkrel 2
+%define name thoggen
+%define version 0.7.0
+%define release %mkrel 1
 
-Name: 	 	%{name}
-Summary: 	Wizard-style DVD backup utility
-Version: 	%{version}
-Release: 	%{release}
+Name: %{name}
+Summary: Wizard-style DVD backup utility
+Version: %{version}
+Release: %{release}
 
-Source:		http://prdownloads.sourceforge.net/thoggen/%{name}-%{version}.tar.bz2
-#Patch:		thoggen-0.4.1-new-dvdread.patch.bz2
-URL:		http://thoggen.net/
-License:	GPL
-Group:		Video
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	iso-codes
-BuildRequires:	libgstreamer-plugins-base-devel
-BuildRequires:	libdvdread-devel
-BuildRequires:	libglade2.0-devel
-BuildRequires:	libhal-devel
-BuildRequires:	dbus-glib-devel
-BuildRequires:	gstreamer0.10-mpeg
-BuildRequires:	gstreamer0.10-a52dec gstreamer0.10-mpeg
-BuildRequires:	gstreamer0.10-plugins-good
-BuildRequires:	gstreamer0.10-plugins-ugly gstreamer0.10-vorbis
-BuildRequires:	valgrind
-BuildRequires:	perl-XML-Parser
-BuildRequires:	desktop-file-utils
-Requires:  	gstreamer0.10-a52dec gstreamer0.10-mpeg
-Requires:	gstreamer0.10-plugins-good
-Requires:  	gstreamer0.10-plugins-ugly gstreamer0.10-vorbis
-Requires:	iso-codes
+Source: http://prdownloads.sourceforge.net/thoggen/%{name}-%{version}.tar.gz
+#Patch: thoggen-0.4.1-new-dvdread.patch.bz2
+URL: http://thoggen.net/
+License: GPL
+Group: Video
+BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires: iso-codes
+BuildRequires: libgstreamer-plugins-base-devel
+BuildRequires: libdvdread-devel
+BuildRequires: libglade2.0-devel
+BuildRequires: libhal-devel
+BuildRequires: dbus-glib-devel
+BuildRequires: gstreamer0.10-mpeg
+BuildRequires: gstreamer0.10-a52dec gstreamer0.10-mpeg
+BuildRequires: gstreamer0.10-plugins-good
+BuildRequires: gstreamer0.10-plugins-ugly gstreamer0.10-vorbis
+BuildRequires: valgrind
+BuildRequires: perl-XML-Parser
+BuildRequires: desktop-file-utils
+Requires: gstreamer0.10-a52dec gstreamer0.10-mpeg
+Requires: gstreamer0.10-plugins-good
+Requires: gstreamer0.10-plugins-ugly gstreamer0.10-vorbis
+Requires: iso-codes
 BuildRequires: ImageMagick
-ExcludeArch: x86_64
+#ExcludeArch: x86_64
 
 %description
 Thoggen is designed to be easy and straight-forward to use. It attempts to
@@ -47,6 +47,7 @@ sensible defaults that work okay for most people most of the time.
 %prep
 %setup -q
 #%patch -p1
+perl -pi -e "s|.png||" data/thoggen.desktop.in
 
 %build
 %configure2_5x
@@ -73,11 +74,6 @@ convert -size 32x32 data/%name.png $RPM_BUILD_ROOT/%_iconsdir/%name.png
 mkdir -p $RPM_BUILD_ROOT/%_miconsdir
 convert -size 16x16 data/%name.png $RPM_BUILD_ROOT/%_miconsdir/%name.png
 
-pushd .
-cd %buildroot%_datadir/locale
-mv fr_FR fr
-mv pt_PT pt
-popd
 %find_lang %name
 %find_lang %{name}_iso_639
 cat %{name}_iso_639.lang >> %{name}.lang
