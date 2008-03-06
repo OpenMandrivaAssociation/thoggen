@@ -20,17 +20,22 @@ BuildRequires: libglade2.0-devel
 BuildRequires: libhal-devel
 BuildRequires: dbus-glib-devel
 BuildRequires: gstreamer0.10-mpeg
-BuildRequires: gstreamer0.10-a52dec gstreamer0.10-mpeg
+BuildRequires: gstreamer0.10-a52dec
+BuildRequires: gstreamer0.10-mpeg
 BuildRequires: gstreamer0.10-plugins-good
-BuildRequires: gstreamer0.10-plugins-ugly gstreamer0.10-vorbis
+BuildRequires: gstreamer0.10-plugins-ugly
+BuildRequires: gstreamer0.10-vorbis
 BuildRequires: valgrind
 BuildRequires: perl-XML-Parser
 BuildRequires: desktop-file-utils
-Requires: gstreamer0.10-a52dec gstreamer0.10-mpeg
-Requires: gstreamer0.10-plugins-good
-Requires: gstreamer0.10-plugins-ugly gstreamer0.10-vorbis
-Requires: iso-codes
 BuildRequires: ImageMagick
+Requires: gstreamer0.10-a52dec
+Requires: gstreamer0.10-mpeg
+Requires: gstreamer0.10-plugins-good
+Requires: gstreamer0.10-plugins-ugly
+Requires: gstreamer0.10-vorbis
+Requires: iso-codes
+Suggests: gstreamer0.10-dts
 #ExcludeArch: x86_64
 
 %description
