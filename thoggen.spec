@@ -28,7 +28,7 @@ BuildRequires: gstreamer0.10-vorbis
 BuildRequires: valgrind
 BuildRequires: perl-XML-Parser
 BuildRequires: desktop-file-utils
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 Requires: gstreamer0.10-a52dec
 Requires: gstreamer0.10-mpeg
 Requires: gstreamer0.10-plugins-good
