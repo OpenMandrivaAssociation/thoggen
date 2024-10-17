@@ -9,7 +9,7 @@ Release: %{release}
 
 Source: http://prdownloads.sourceforge.net/thoggen/%{name}-%{version}.tar.gz
 #Patch: thoggen-0.4.1-new-dvdread.patch.bz2
-URL: http://thoggen.net/
+URL: https://thoggen.net/
 License: GPL
 Group: Video
 BuildRoot: %{_tmppath}/%{name}-buildroot
