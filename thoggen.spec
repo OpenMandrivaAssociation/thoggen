@@ -13,6 +13,11 @@ URL: https://thoggen.net/
 License: GPL
 Group: Video
 BuildRoot: %{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: iso-codes
 BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: libdvdread-devel
