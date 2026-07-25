@@ -1,6 +1,6 @@
 %define name thoggen
 %define version 0.7.1
-%define release %mkrel 3
+%define release 4
 
 Name: %{name}
 Summary: Wizard-style DVD backup utility
